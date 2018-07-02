@@ -1,8 +1,6 @@
 const tmi = require('tmi.js');
 const prefix = "!";
 const reactions = require('./reactions.js');
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://flashzo:bbenzo2911@ds121861.mlab.com:21861/flashzo');
 var Quotes = ["\Abandonner est un signe de lacheté", "\" C est en encourageant l’individu qu’on révèle et développe ses meilleurs dons.", "\" Soyez celui qui voit la vie du bon côté et en parle avec crédibilité.",  "\" \Vers l'infini et au dela",  "\" I WILL BE BACK","\" Que la force soit avec toi","\" This is partaaaaaa!!!","\" NOM DE DIEU ", "\" \JE SUIS TON PERE", "\"JE SUIS GROUT ","\" ON DIT MERCI QUI, TON PERE ","\"Pikatchu attaque",];
 
 const tmiConfig = {
@@ -13,11 +11,11 @@ const tmiConfig = {
         reconnect:  true
     },
     identity: {
-        username: "erinatwitchbot",
-        password: "oauth:frfk0bd216infrem20gnyp1l9d2z19"
+        username: "erinatwitchbot", // FAUT PAS CHANGER 
+        password: "oauth:frfk0bd216infrem20gnyp1l9d2z19" // SA NON PLUS
     },
     channels: [
-        "flashzo12345"
+        "flashzo12345" // A CHANGER SUR LE STREAM QUE VOUS VOULEZ QUE LE BOT SOIS
     ]
 };
 
@@ -68,7 +66,7 @@ client.on("chat", function (channel, user, message, self) {
     }
 
     if(message == "!youtube") {
-        client.say(channel, "Le lien youtube");
+        client.say(channel, "Le lien youtube"); // METTRE SA CHAINE YOUTUBE
     }
   if (message == "!quote") {
     	var rand = Quotes[Math.floor(Math.random() * Quotes.length)];
@@ -106,7 +104,7 @@ client.on('chat', (channel, user, message, isSelf) => {
 	  break;
 	 
 	   case "createur":
-     client.say(channel,"Je suis le createur de se bot encore en cours de développement");
+     client.say(channel,"Enzo est le createur de se bot encore en cours de développement");
    break;
     case "clear":
   if(isBroadcaster(user)){
@@ -132,3 +130,4 @@ client.on('chat', (channel, user, message, isSelf) => {
     }
 
 });
+// BOT CREATE BY ENZO MERCI DE NE PAS S'APPROPRIE SE BOT SA SERAIS UN MANQUE DE RESPECT :)
